@@ -5,7 +5,7 @@ class Hotel < ApplicationRecord
   before_save :normalize_title
 
   validates :title, presence: true, uniqueness: true
-  validates :breakfast, :room, :price , presence: true
+  validates :breakfast, :room, :image, :price , presence: true
 
   mount_uploader :image, ImageUploader
 
