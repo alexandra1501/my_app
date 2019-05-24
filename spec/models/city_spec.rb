@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe City, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'name should be present' do
+    city = City.new(name: '')
+    expect(city.valid?).to eq(false)
+  end
+
 end

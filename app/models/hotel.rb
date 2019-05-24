@@ -6,7 +6,7 @@ class Hotel < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :breakfast, :room, :image, presence: true
-  validates :price, presence: true, numericality: true
+  validates :price, presence: true, numericality: {message: 'Only numeric values'}
 
   mount_uploader :image, ImageUploader
 

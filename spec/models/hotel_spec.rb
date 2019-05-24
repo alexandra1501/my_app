@@ -28,8 +28,8 @@ RSpec.describe Hotel, type: :model do
     end
 
     it 'price is numerical value' do
-    hotel = Hotel.new(title: 'Albatros', breakfast: 'yes', room: 'its nicee', image: 'aaa', price: 'two hundreed dollars')
-    expect(hotel.valid?).to eq(false)
+      hotel = Hotel.new(title: 'Albatros', breakfast: 'yes', room: 'its nicee', image: 'aaa', price: 'two hundreed dollars')
+      expect(hotel.valid?).to eq(false)
     end
 
 end
