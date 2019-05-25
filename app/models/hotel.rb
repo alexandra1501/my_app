@@ -1,12 +1,13 @@
 class Hotel < ApplicationRecord
   has_many :comments
-  belongs_to :street
+  belongs_to :street, optional: true
 
   before_save :normalize_title
 
   validates :title, presence: true, uniqueness: true
-  validates :breakfast, :room, :image, presence: true
+  validates :room, :image, presence: true
   validates :price, presence: true, numericality: {message: 'Only numeric values'}
+  validates :breakfast, inclusion: {in: ['yes', 'no'], message: 'YES/NO'}, presence: true
 
   mount_uploader :image, ImageUploader
 

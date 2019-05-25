@@ -1,6 +1,6 @@
 class City < ApplicationRecord
   has_many :streets
-  belongs_to :country
+  belongs_to :country, optional: true
 
   before_save :normalize_city_name
 

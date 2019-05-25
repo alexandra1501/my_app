@@ -1,6 +1,6 @@
 class Street < ApplicationRecord
   has_many :hotels
-  belongs_to :city
+  belongs_to :city, optional: true
 
   before_save :normalize_street_name
 

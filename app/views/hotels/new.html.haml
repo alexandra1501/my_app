@@ -1,0 +1,22 @@
+%h2 Create new hotel
+
+= form_for :hotels, url: hotels_path, method: :post do
+
+  = label :hotel, :title, 'Title'
+  = text_field :hotel, :title
+
+  = label :hotel, :breakfast, 'Breakfast'
+  = text_field :hotel, :breakfast
+
+  = label :hotel, :room, 'Room Description'
+  = text_field :hotel, :room
+
+  = label :hotel, :price, 'Price (USD)'
+  = text_field :hotel, :price
+
+  = label :hotel, :image, 'Add an Image'
+  = file_field :hotel, :image
+  = hidden_field :hotel, :image_cache
+
+  = submit_tag 'Save Hotel'
+  = link_to 'Back', hotels_path
