@@ -4,7 +4,7 @@ class Hotel < ApplicationRecord
 
   before_save :normalize_title
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: {message: 'Hotel with this name already exists!'}
   validates :room, :image, presence: true
   validates :price, presence: true, numericality: {message: 'Only numeric values'}
   validates :breakfast, inclusion: {in: ['yes', 'no'], message: 'YES/NO'}, presence: true

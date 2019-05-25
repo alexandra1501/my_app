@@ -1,0 +1,14 @@
+%h2 Details about #{@hotel.title}
+
+%ul#details
+  %li
+    Breakfast included?:
+    =@hotel.breakfast
+  %li
+    Image of the hotel:
+    =@hotel.image
+%h3 Room description:
+%p#description = @hotel.room
+
+=link_to 'Back', hotels_path
+

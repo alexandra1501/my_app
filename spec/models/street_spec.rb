@@ -8,8 +8,8 @@ RSpec.describe Street, type: :model do
   end
 
   it 'name should be normalised' do
-    city = City.create!(name: 'Rome')
-    country = Country.create!(name: 'Italy')
+#    city = City.create!(name: 'Rome')
+#    country = Country.create!(name: 'Italy')
     street = Street.create!(name: 'gRodzka')
     expect(street.name).to eq("Grodzka")
   end
