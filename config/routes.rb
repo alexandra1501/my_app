@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :hotels
+  root 'hotels#index'
+
+  resources :hotels do
+    resources :comments
+  end
   resources :streets
   resources :cities
   resources :countries
-
-  root 'hotels#index'
 
 end

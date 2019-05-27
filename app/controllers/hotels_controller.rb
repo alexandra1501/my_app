@@ -1,6 +1,6 @@
 class HotelsController < ApplicationController
 
-  before_action :find_user, only: [:edit, :show, :update, :destroy]
+  before_action :find_hotel, only: [:edit, :show, :update, :destroy]
 
   def index
     @hotels = Hotel.all
@@ -39,7 +39,7 @@ class HotelsController < ApplicationController
   end
 
   private
-    def find_user
+    def find_hotel
       @hotel = Hotel.find(params[:id])
     end
 
