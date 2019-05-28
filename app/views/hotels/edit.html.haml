@@ -1,6 +1,6 @@
 %h2 Edit #{@hotel.title}
 
-= form_for :hotel, url: hotels_path(@hotel), method: :put do
+= form_for :hotel, url: hotel_path(@hotel), :method => :put do
 
   = render 'hotel_form'
 

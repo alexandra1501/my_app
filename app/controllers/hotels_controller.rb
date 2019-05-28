@@ -18,6 +18,7 @@ class HotelsController < ApplicationController
 
   def new
     @hotel = Hotel.new
+#    @street = @hotel.street.build
   end
 
   def edit
@@ -44,7 +45,7 @@ class HotelsController < ApplicationController
     end
 
     def hotel_params
-      params.require(:hotel).permit(:title, :breakfast, :room, :image, :image_cache, :price)
+      params.require(:hotel).permit(:title, :breakfast, :room, :image, :image_cache, :price, street_params: [:name])
     end
 
 end

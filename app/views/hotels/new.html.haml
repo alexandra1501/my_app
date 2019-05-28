@@ -2,6 +2,13 @@
 
 = form_for :hotels, url: hotels_path, :method  => :post do
 
+  - if @hotel.errors.any?
+    #error_explanation
+      %h2
+      %ul
+      - @hotel.errors.full_messages.each do |msg|
+        %li= msg
+
   = render 'hotel_form'
 
   = submit_tag 'Save Hotel'
