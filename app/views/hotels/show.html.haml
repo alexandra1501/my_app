@@ -11,4 +11,16 @@
 %p#description= @hotel.room
 
 =link_to 'Back', hotels_path
+=link_to 'Delete', hotel_path(@hotel), method: :delete
+
+%h3 Add a comment:
+= form_with( model: [ @hotel, @hotel.comments.build], local:true) do
+  %p
+  = label :rating, 'Rating'
+  = text_field :comment, :rating
+
+  = label :content, 'Comment'
+  = text_field :comment, :content
+
+  = submit_tag 'Post Comment'
 

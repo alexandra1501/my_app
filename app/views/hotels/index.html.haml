@@ -10,6 +10,6 @@
       %tr
         %td= hotel.title
         %td= hotel.price
-        %td= link_to 'More about #{@hotel.title}', hotel_path(hotel)
+        %td= link_to 'More about', hotel_path(hotel)
         %td= link_to 'Edit', edit_hotel_path(hotel)
 = link_to 'Add new hotel', new_hotel_path

@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :find_hotel
 
   def create
-    @comment = hotel.comments.create(comment_params)
+    @comment = @hotel.comments.create(comment_params)
     redirect_to hotel_path(@hotel)
   end
 
