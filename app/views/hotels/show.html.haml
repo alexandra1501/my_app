@@ -24,3 +24,11 @@
 
   = submit_tag 'Post Comment'
 
+%h4 Comments
+- @hotel.comments.each do |comment|
+  %li
+    Rating:
+    =comment.rating
+  %li
+    Comment:
+    =comment.content
